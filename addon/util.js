@@ -115,6 +115,9 @@ export function getMatch(subString, array, key) {
   return array
     .filter(function(string) {
       if (key) { string = string[key]; }
+    
+      if (!string) return false;
+    
       return string.toLowerCase().indexOf(subString.toLowerCase()) > -1 &&
         subString.length < string.length;
     })
